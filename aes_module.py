@@ -21,6 +21,7 @@ class AES_ECB:
 		return plaintext
 
 
+
 class AES_CBC:
 	def __init__(self, key, iv):
 		self.cipher_enc = Cipher(algorithms.AES(key), modes.CBC(iv)).encryptor()
@@ -37,3 +38,5 @@ class AES_CBC:
 
 		return plaintext
 
+
+def Miyaguchi_Preneel(out)
