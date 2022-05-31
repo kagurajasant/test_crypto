@@ -1,4 +1,3 @@
-from email import message
 from MP_module import Miyaguchi_Preneel
 
 # key = 0xdfa66747de9ae63030ca32611497c827.to_bytes(16, "big")
