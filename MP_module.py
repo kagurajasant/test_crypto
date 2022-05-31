@@ -17,13 +17,13 @@ def Miyaguchi_Preneel(message:bytes):
 	m_fin = m + '1' + k + l_pad
 	print("m_fin=",m_fin, len(m_fin))
 	out = 0x0.to_bytes(16, "big")
-	o = []
-	o.append(AES_ECB(out))
+	AES_cipher_object = []
+	AES_cipher_object.append(AES_ECB(out))
 	for i in range (0, len(m_fin)//128):
 		m_block = m_fin[i*128 : (i+1)*128]
-		output = o[i].encrypt(int(m_block,2).to_bytes(16,'big'))
+		output = AES_cipher_object[i].encrypt(int(m_block,2).to_bytes(16,'big'))
 		out = (int(out.hex(), 16) ^ int(output.hex(), 16) ^ int(m_block, 2)).to_bytes(16, 'big')
-		o.append(AES_ECB(out))
+		AES_cipher_object.append(AES_ECB(out))
 	print(out.hex())
 
 		
