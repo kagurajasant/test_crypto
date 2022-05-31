@@ -21,3 +21,6 @@ def SUBK(k:bytes):
 		K2 = left_shift_128(K1) ^ 135
 	
 	print('K2 : {0}'.format(hex(K2)[2:]))
+
+def CMAC(k:bytes, m:bytes, tlen:int):
+	
