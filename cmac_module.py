@@ -55,6 +55,9 @@ def CMAC(k:bytes, m:bytes, tlen:int):
 		ciphertext = AES_cipher_object.encrypt((int(m_block,2)^int(prev_out.hex(),16)).to_bytes(16,'big'))
 		prev_out = ciphertext
 
-	ret_val = bin(int.from_bytes(prev_out, "big"))[2:tlen+2].zfill(128)
+	if tlen < 128:
+		ret_val = (bin(int.from_bytes(prev_out, "big"))[2:].zfill(128))[:tlen]
+	else:
+		ret_val = (bin(int.from_bytes(prev_out, "big"))[2:].zfill(128))
 	return ret_val
 	# print('prevout:',prev_out.hex())
