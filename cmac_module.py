@@ -7,21 +7,21 @@ def left_shift_128(i:int):
 def SUBK(k:bytes):
 	aes_cipher_object = AES_ECB(k)
 	L = aes_cipher_object.encrypt(0x0.to_bytes(16, 'big'))
-	#print(bin(int(L.hex(), 16)))
-	print(L.hex())	
+	# print(bin(int(L.hex(), 16)))
+	# print(L.hex())	
 	if(int(L.hex(), 16) >> 127 == 0):
 		K1 = left_shift_128(int(L.hex(), 16))
 	else:
 		K1 = (left_shift_128(int(L.hex(), 16))) ^ 135
 	
-	print('K1 : {0}'.format(hex(K1)[2:]))
+	# print('K1 : {0}'.format(hex(K1)[2:]))
 
 	if(K1 >> 127 == 0):
 		K2 = left_shift_128(K1)
 	else:
 		K2 = left_shift_128(K1) ^ 135
 	
-	print('K2 : {0}'.format(hex(K2)[2:]))
+	# print('K2 : {0}'.format(hex(K2)[2:]))
 
 	return K1, K2
 
@@ -55,6 +55,6 @@ def CMAC(k:bytes, m:bytes, tlen:int):
 		ciphertext = AES_cipher_object.encrypt((int(m_block,2)^int(prev_out.hex(),16)).to_bytes(16,'big'))
 		prev_out = ciphertext
 
-	ret_val = bin(int.from_bytes(prev_out, "big"))[2:tlen+2]
+	ret_val = bin(int.from_bytes(prev_out, "big"))[2:tlen+2].zfill(128)
 	return ret_val
 	# print('prevout:',prev_out.hex())
