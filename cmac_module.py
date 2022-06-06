@@ -1,4 +1,3 @@
-import re
 from aes_module import AES_ECB
 
 def left_shift_128(i:int):
