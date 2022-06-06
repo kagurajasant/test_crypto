@@ -6,9 +6,11 @@ import unittest
 # Miyaguchi_Preneel(message.to_bytes(32, "big"))
 
 class TestMP(unittest.TestCase):
-	def test_MP(self):
+	def test_MP_bigmessage(self):
 		expected = 'c7277a0dc1fb853b5f4d9cbd26be40c6'
 		message = 0x6bc1bee22e409f96e93d7e117393172aae2d8a571e03ac9c9eb76fac45af8e51
-		actual = Miyaguchi_Preneel(message.to_bytes(32, "big"))
+		actual = Miyaguchi_Preneel(message.to_bytes(32, "big"), 1)
 		self.assertEqual(actual, expected)
 
+if __name__ == '__main__':
+    unittest.main()
