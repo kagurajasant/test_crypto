@@ -34,3 +34,15 @@ K3 = KDF(K_new, KEY_UPDATE_ENC_C)
 print("K3:", K3)
 K4 = KDF(K_new, KEY_UPDATE_MAC_C)
 print("K4:", K4)
+
+ecb_obj = AES_ECB(int(K3, 16).to_bytes(16, 'big'))
+print('K3:',int(K3, 16).to_bytes(16, 'big'))
+m4_tail_before_enc = CID+'8'+'0'*(31-len(CID))
+print('m4_tail_bef:',m4_tail_before_enc)
+m4_tail = ecb_obj.encrypt(int(m4_tail_before_enc, 16).to_bytes(16, 'big')).hex()
+print('m4_tail:',m4_tail)
+m4 = UID+ID+AuthID+m4_tail
+print("m4:", m4)
+m5 = CMAC(int(K4,16).to_bytes(16, 'big'), int(m4,16).to_bytes(32, 'big'), 128)
+
+print("m5:", hex(int(m5,2))[2:])
