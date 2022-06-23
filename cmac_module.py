@@ -1,14 +1,14 @@
 from aes_module import AES_ECB
 
-def left_shift_128(i:int):
+def left_shift_128(i:int): #left shift and consider the 128 LSBs
 	return (i << 1) & 0xffffffffffffffffffffffffffffffff
 
 def SUBK(k:bytes):
 	aes_cipher_object = AES_ECB(k)
-	L = aes_cipher_object.encrypt(0x0.to_bytes(16, 'big'))
+	L = aes_cipher_object.encrypt(0x0.to_bytes(16, 'big')) #encrypt 128 bit 0 string with key k
 	# print(bin(int(L.hex(), 16)))
 	# print(L.hex())	
-	if(int(L.hex(), 16) >> 127 == 0):
+	if(int(L.hex(), 16) >> 127 == 0): #if MSB == 0
 		K1 = left_shift_128(int(L.hex(), 16))
 	else:
 		K1 = (left_shift_128(int(L.hex(), 16))) ^ 135
@@ -24,7 +24,7 @@ def SUBK(k:bytes):
 
 	return K1, K2
 
-def CMAC(k:bytes, m:bytes, tlen:int):
+def CMAC(k:bytes, m:bytes, tlen:int): #taglen <= 128 always
 	K1, K2 = SUBK(k)
 	b = 128
 	mlen = len(bin(int(m.hex(),16))[2:].zfill(len(m)*8))
@@ -34,7 +34,7 @@ def CMAC(k:bytes, m:bytes, tlen:int):
 	if int(m.hex(), 16) == 0:
 		n = 1
 	else:
-		n = -1 * (-mlen//b)
+		n = -1 * (-mlen//b) #ceil(mlen/b)
 
 	if mlen %128 != 0:
 		m_bit += '1' + '0'*(128 - (mlen+1)%128)
