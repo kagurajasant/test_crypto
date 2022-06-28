@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Documentation}
+\author{Satyam Sachan}
+\date{June 2022}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Introduction}
+	The \texttt{test\_crypto} library implements the common cryptographic functions found in the Secure Hardware Extension (SHE). This document covers the construction and usage of these functions.
+	
+	\section{Implemented Primitives}
+	The following primitives are available as a module:
+	\begin{itemize}
+		\item \underline{Encryption/Decryption}: \texttt{AES-ECB} (Electronic Code Book) and \texttt{AES-CBC} (Cipher Block Chaining).
+		\item \underline{Hash Function}: \texttt{Miyaguchi-Preneel Compression}.
+		\item \underline{\texttt{MAC}}: \texttt{Cipher-based MAC} with \texttt{AES} as the pseudorandom function.
+	\end{itemize}
+	
+	\subsection{\texttt{Miyaguchi-Preneel Compression}}
+	The M-P Compression function uses \texttt{AES-ECB} as a pseudoerandom function in order to generate a hash value. 
+	\subsection{\texttt{CMAC}}
+	
+\end{document}

@@ -1,8 +1,26 @@
+##
+# @file MP_module.py
+#
+# @brief The base module for calculating a MP.
+#
+#
+# @section libraries_MP_mod Libraries/Modules
+# - aes_module.py for AES_ECB
+# @section references_MP_mod References
+# - SHE Specification (https://www.autosar.org/fileadmin/user_upload/standards/foundation/19-11/AUTOSAR_TR_SecureHardwareExtensions.pdf)
+# @section author_MP_mod Author(s)
+# - Created by Satyam Sachan on 06/23/2022.
+# - Modified by Satyam Sachan on 06/23/2022.
 from aes_module import AES_ECB
-from math import floor
+
 
 
 def Miyaguchi_Preneel(message:bytes, pad:int):
+	'''! Implements the Miyaguchi-Preneel Compression function, as in the SHE spec.
+		@param[in] message The message to be hashed. Needs to be in bytes. 
+		@param[in] pad Switch for padding. If \p message includes the padding, set \p pad to 0, else 1.
+ 		@param[out] out Hash value of message in hex (type string). 
+	'''
 	# print('lmessage',len(message))
 	m = bin(int(message.hex(),16))[2:].zfill(len(message)*8)
 	#m = bin(int(message.hex(),16))[2:]

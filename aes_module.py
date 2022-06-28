@@ -15,7 +15,7 @@ the cryptographic operations for the Secure Hardware Extenstion (SHE)."""
 # @brief The base module for creating an AES object for encryption/decryption in the chosen mode of operation.
 #
 #
-# @section libraries_main Libraries/Modules
+# @section libraries_aes_mod Libraries/Modules
 # - cryptography (https://cryptography.io/en/latest/)
 #   - Access to the cryptography.hazmat.primitives.ciphers, which gives us the 
 # 	AES primitive and modes of operation.
@@ -23,7 +23,7 @@ the cryptographic operations for the Secure Hardware Extenstion (SHE)."""
 #
 # 
 #
-# @section author_doxygen_example Author(s)
+# @section author_aes_mod Author(s)
 # - Created by Satyam Sachan on 06/23/2022.
 # - Modified by Satyam Sachan on 06/23/2022.
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
@@ -46,7 +46,7 @@ class AES_ECB:
 		# print("blocksize = ", algorithms.AES(key).block_size)
 
 	def encrypt(self, plaintext:bytes):
-		'''! Uses \p cipher_enc to encrypt \p plaintext (in bytes) in AES-ECB with \p key as defined in #__init__.
+		'''! Uses \p cipher_enc to encrypt \p plaintext (in bytes) in AES-ECB with \p key as defined in #__init__().
 		@param[in] plaintext The bytes to be encrypted
 		@param[out] ciphertext The encrypted plaintext
 		'''
@@ -55,7 +55,7 @@ class AES_ECB:
 		return ciphertext
 
 	def decrypt(self, ciphertext:bytes):
-		'''! Uses \p cipher_dec to decrypt \p ciphertext (in bytes) in AES-ECB with \p key as defined in #__init__.
+		'''! Uses \p cipher_dec to decrypt \p ciphertext (in bytes) in AES-ECB with \p key as defined in #__init__().
 		@param[in] ciphertext The encrypted plaintext
 		@param[out] plaintext The decrypted ciphertext
 		'''
@@ -66,7 +66,7 @@ class AES_ECB:
 
 
 class AES_CBC:
-	'''! The base class for AES-ECB.'''
+	'''! The base class for AES-CBC.'''
 	def __init__(self, key:bytes, iv:bytes): 
 		'''! Initialize AES-CBC object with \p key and \p iv (in bytes). 
 		@param[in] key The key to be used. Needs to be 16 bytes long.
@@ -81,7 +81,7 @@ class AES_CBC:
 		# print("blocksize = ", algorithms.AES(key).block_size)
 
 	def encrypt(self, plaintext:bytes):
-		'''! Uses \p cipher_enc to encrypt \p plaintext (in bytes) in AES-CBC with \p key and \p iv as defined in #__init__.
+		'''! Uses \p cipher_enc to encrypt \p plaintext (in bytes) in AES-CBC with \p key and \p iv as defined in #__init__().
 		@param[in] plaintext The bytes to be encrypted
 		@param[out] ciphertext The encrypted plaintext
 		'''
@@ -90,7 +90,7 @@ class AES_CBC:
 		return ciphertext
 
 	def decrypt(self, ciphertext:bytes):
-		'''! Uses \p cipher_dec to decrypt \p ciphertext (in bytes) in AES-CBC with \p key and \p iv as defined in #__init__.
+		'''! Uses \p cipher_dec to decrypt \p ciphertext (in bytes) in AES-CBC with \p key and \p iv as defined in #__init__().
 		@param[in] ciphertext The encrypted plaintext
 		@param[out] plaintext The decrypted ciphertext
 		'''

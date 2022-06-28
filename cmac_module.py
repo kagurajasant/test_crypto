@@ -1,9 +1,28 @@
+##
+# @file cmac_module.py
+#
+# @brief The base module for calculating a CMAC.
+#
+#
+# @section libraries_cmac_mod Libraries/Modules
+# - aes_module.py for AES_ECB
+# @section references_cmac_mod References
+# - NIST Special Publication 800-38B (https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-38b.pdf)
+# @section author_cmac_mod Author(s)
+# - Created by Satyam Sachan on 06/23/2022.
+# - Modified by Satyam Sachan on 06/23/2022.
 from aes_module import AES_ECB
 
 def left_shift_128(i:int): #left shift and consider the 128 LSBs
+	'''! Defined in the referenced standard. This function left shifts \p i by 1 and discards the MSB.'''
 	return (i << 1) & 0xffffffffffffffffffffffffffffffff
 
 def SUBK(k:bytes):
+	'''! Subkey generation, as in the referenced standard. Derives two keys \p K1 and \p K2 from the input key \p k.
+		@param[in] k The key to be used. Needs to be 16 bytes long. 
+ 		@param[out] K1 Subkey #1, used to derive K2 in #SUBK() and in #CMAC() for messages if the message length is a multiple of AES's blocksize (128 bits).
+		@param[out] K2 Subkey #2, used in #CMAC for messages if the message length is not a multiple of AES's blocksize (128 bits).
+	'''
 	aes_cipher_object = AES_ECB(k)
 	L = aes_cipher_object.encrypt(0x0.to_bytes(16, 'big')) #encrypt 128 bit 0 string with key k
 	# print(bin(int(L.hex(), 16)))
@@ -24,7 +43,13 @@ def SUBK(k:bytes):
 
 	return K1, K2
 
-def CMAC(k:bytes, m:bytes, tlen:int): #taglen <= 128 always
+def CMAC(k:bytes, m:bytes, tlen:int):
+	'''! CMAC routine, as in the referenced standard. Uses #SUBK() for subkey generation.
+		@param[in] k The key to be used. Needs to be 16 bytes long. 
+		@param[in] m The message to be CMACd. Needs to be in bytes.
+		@param[in] tlen Tag length in bits. Can be up to 128 bits.
+ 		@param[out] ret_val Tag value in bits (type string).
+	'''
 	K1, K2 = SUBK(k)
 	b = 128
 	mlen = len(bin(int(m.hex(),16))[2:].zfill(len(m)*8))

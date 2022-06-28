@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>test_crypto_docs: C:/Users/ssachan/Desktop/test_crypto/test_crypto/aes_module.py File Reference</title>
+<title>test_crypto_docs: C:/Users/ssachan/Desktop/test_crypto/test_crypto/MP_module.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,47 +67,78 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
-  <div class="headertitle"><div class="title">aes_module.py File Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">MP_module.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>The base module for creating an AES object for encryption/decryption in the chosen mode of operation.  
+<p>The base module for calculating a MP.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaes__module_1_1_a_e_s___e_c_b.html">aes_module.AES_ECB</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base class for AES-ECB.  <a href="classaes__module_1_1_a_e_s___e_c_b.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaes__module_1_1_a_e_s___c_b_c.html">aes_module.AES_CBC</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base class for AES-CBC.  <a href="classaes__module_1_1_a_e_s___c_b_c.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceaes__module"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaes__module.html">aes_module</a></td></tr>
-<tr class="memdesc:namespaceaes__module"><td class="mdescLeft">&#160;</td><td class="mdescRight">Documentation for test_crypto, a utility for cross-checking the outputs of the cryptographic operations for the Secure Hardware Extenstion (SHE). <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a48e7910ec3803f961ce386125b0ae723"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_m_p__module_8py.html#a48e7910ec3803f961ce386125b0ae723">MP_module.Miyaguchi_Preneel</a> (bytes message, int pad)</td></tr>
+<tr class="memdesc:a48e7910ec3803f961ce386125b0ae723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the Miyaguchi-Preneel Compression function, as in the SHE spec.  <a href="_m_p__module_8py.html#a48e7910ec3803f961ce386125b0ae723">More...</a><br /></td></tr>
+<tr class="separator:a48e7910ec3803f961ce386125b0ae723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >The base module for creating an AES object for encryption/decryption in the chosen mode of operation. </p>
-<h1><a class="anchor" id="libraries_aes_mod"></a>
+<div class="textblock"><p >The base module for calculating a MP. </p>
+<h1><a class="anchor" id="libraries_MP_mod"></a>
 Libraries/Modules</h1>
 <ul>
-<li>cryptography (<a href="https://cryptography.io/en/latest/">https://cryptography.io/en/latest/</a>)<ul>
-<li>Access to the cryptography.hazmat.primitives.ciphers, which gives us the AES primitive and modes of operation.</li>
+<li><a class="el" href="aes__module_8py.html" title="The base module for creating an AES object for encryption/decryption in the chosen mode of operation.">aes_module.py</a> for AES_ECB </li>
 </ul>
-</li>
+<h1><a class="anchor" id="references_MP_mod"></a>
+References</h1>
+<ul>
+<li>SHE Specification (<a href="https://www.autosar.org/fileadmin/user_upload/standards/foundation/19-11/AUTOSAR_TR_SecureHardwareExtensions.pdf">https://www.autosar.org/fileadmin/user_upload/standards/foundation/19-11/AUTOSAR_TR_SecureHardwareExtensions.pdf</a>) </li>
 </ul>
-<h1><a class="anchor" id="author_aes_mod"></a>
+<h1><a class="anchor" id="author_MP_mod"></a>
 Author(s)</h1>
 <ul>
 <li>Created by Satyam Sachan on 06/23/2022.</li>
 <li>Modified by Satyam Sachan on 06/23/2022. </li>
 </ul>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a48e7910ec3803f961ce386125b0ae723" name="a48e7910ec3803f961ce386125b0ae723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e7910ec3803f961ce386125b0ae723">&#9670;&nbsp;</a></span>Miyaguchi_Preneel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def MP_module.Miyaguchi_Preneel </td>
+          <td>(</td>
+          <td class="paramtype">bytes&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements the Miyaguchi-Preneel Compression function, as in the SHE spec. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>The message to be hashed. Needs to be in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pad</td><td>Switch for padding. If <code>message</code> includes the padding, set <code>pad</code> to 0, else 1. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>Hash value of message in hex (type string). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
