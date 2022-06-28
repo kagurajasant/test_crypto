@@ -14,10 +14,10 @@
 from MP_module import Miyaguchi_Preneel
 
 def KDF(K:bytes, C:bytes):
-	'''! Implements the key derivation function (KDF), as in the SHE spec.
+	'''! Implements the key derivation function (KDF), as in the SHE spec. 
 		@param[in] K The key from which the other keys are derived. Needs to be in bytes. 
 		@param[in] C Constant. Set as in the SHE spec.
- 		@param[out] out Derived key. 
+ 		@param[out] out Derived key. Output is a hex string.
 	'''
 	i = bytearray(K) + bytearray(C)
 	return Miyaguchi_Preneel(i, 0)
