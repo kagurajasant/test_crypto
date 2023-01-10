@@ -116,5 +116,8 @@ generate an authentication code. Enables the following functions:
 All the above primitives have been implemented, as have all of the above
 functions that have test vectors in the SHE spec.
 
+### Flowchart
+
+The following flowchart details the relations between the functions discussed above.
 ![](https://github.com/kagurajasant/test_crypto/blob/main/flowchart_diag.png)
 
