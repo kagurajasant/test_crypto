@@ -1,11 +1,6 @@
 # test_crypto
 Intern project at Visteon, summer'22.
 
----
-date: June 2022
-title: "`test_crypto` Documentation"
----
-
 # Introduction
 
 The `test_crypto` library implements the common cryptographic functions
@@ -16,12 +11,12 @@ construction and usage of these functions.
 
 The following primitives are available as a module:
 
--   [Encryption/Decryption]{.underline}: `AES-ECB` (Electronic Code
+-   [Encryption/Decryption]: `AES-ECB` (Electronic Code
     Book) and `AES-CBC` (Cipher Block Chaining).
 
--   [Hash Function]{.underline}: `Miyaguchi-Preneel Compression`.
+-   [Hash Function]: `Miyaguchi-Preneel Compression`.
 
--   [`MAC`]{.underline}: `Cipher-based MAC` with `AES` as the
+-   [`MAC`]: `Cipher-based MAC` with `AES` as the
     pseudorandom function.
 
 ## `AES`
@@ -116,7 +111,7 @@ generate an authentication code. Enables the following functions:
 
     -   `CMD_SECURE_BOOT`: SHE verifies the MAC of the bootloader.
 
-### Note {#note .unnumbered}
+### Note
 
 All the above primitives have been implemented, as have all of the above
 functions that have test vectors in the SHE spec.
