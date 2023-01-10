@@ -120,5 +120,5 @@ functions that have test vectors in the SHE spec.
 
 The following flowchart details the relations between the functions
 discussed above.
-![alt text](docs/Overview/flowchart_diag.png "Title")
+![alt text](https://github.com/kagurajasant/test_crypto/blob/main/docs/Overview/flowchart_diag.jpg)
 
