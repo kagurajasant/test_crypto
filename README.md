@@ -120,5 +120,5 @@ functions that have test vectors in the SHE spec.
 
 The following flowchart details the relations between the functions
 discussed above.
-![alt text](docs/Overview/flowchart_diag.drawio.pdf "Title")
+![alt text](docs/Overview/flowchart_diag.png "Title")
 
