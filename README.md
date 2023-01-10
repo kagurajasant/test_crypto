@@ -1,5 +1,6 @@
 # test_crypto
 Intern project at Visteon, summer'22.
+Please refer to the [Doxygen documentation](https://github.com/kagurajasant/test_crypto/blob/main/docs/html/index.html) in `docs/html` for per-file documentation. The HTML file `index.html` serves as the main page.
 
 # Introduction
 
